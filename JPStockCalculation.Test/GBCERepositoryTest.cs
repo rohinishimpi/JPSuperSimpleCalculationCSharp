@@ -16,7 +16,7 @@ namespace JPStockCalculation.Test
         public void TestallShareIndex()
         {
             Dictionary<string, StockRepository>  stocksDb = new Dictionary<string, StockRepository>();
-           // GBCERepository GBCE = new GBCERepository();
+            GBCERepository gbce = new GBCERepository();
             ContextDB contextdB = new ContextDB();
             stocksDb = contextdB.FillStockDbData();
             
@@ -33,8 +33,8 @@ namespace JPStockCalculation.Test
                     Thread.Sleep(1000);
                 }
         }
-            Double GBCEallShareIndex = GBCERepository.allShareIndex(stocksDb);
-            Assert.AreEqual(1.4142135623730951, GBCEallShareIndex);
+            Double GBCEallShareIndex = gbce.allShareIndex(stocksDb);
+            Assert.AreEqual(1.3797296614612149, GBCEallShareIndex);
             
         }
     }

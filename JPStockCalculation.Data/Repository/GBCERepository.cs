@@ -8,7 +8,7 @@ using System.Collections;
 
 namespace JPStockCalculation.Data
 {
-    public class GBCERepository
+    public class GBCERepository:IGBCERepository
     {
         private Dictionary<String, StockRepository> stocks = new Dictionary<string, StockRepository>();
 
@@ -18,7 +18,7 @@ namespace JPStockCalculation.Data
         /// </summary>
         /// <param name="stocks"></param>
         /// <returns></returns>
-        public static Double allShareIndex(Dictionary<String, StockRepository> stocks)
+        public Double allShareIndex(Dictionary<String, StockRepository> stocks)
         {
             Double allShareIndex = 0.0;
 

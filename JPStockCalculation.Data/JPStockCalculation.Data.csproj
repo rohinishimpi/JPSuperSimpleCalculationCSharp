@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextDB.cs" />
+    <Compile Include="Interface\IGBCERepository.cs" />
     <Compile Include="Repository\GBCERepository.cs" />
     <Compile Include="Repository\StockRepository.cs" />
     <Compile Include="Repository\TradeRepository.cs" />

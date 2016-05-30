@@ -16,7 +16,7 @@ namespace JPStockCalculation.Facade
     /// This Class is a Facade Class which acts as a main System for carrying out Stock Calculations.
     /// It internally interfaces the subsystems of Stocks, Trades to do various mentioned calculations.
     /// </summary>
-    public class StockCalculationFacade: IStockCalculationFacade
+    public class StockCalculationFacade
     {        
        // TradeRepository trade = null;
         GBCERepository gbce = null;
@@ -77,7 +77,7 @@ namespace JPStockCalculation.Facade
         /// Calculates Dividend Yield
         /// </summary>
         /// <returns>double</returns>
-        public double CalculateDividendYield(double price, StockRepository stockRep)
+        private double CalculateDividendYield(double price, StockRepository stockRep)
         {
             double dDividendYield = 0;
 
@@ -98,7 +98,7 @@ namespace JPStockCalculation.Facade
         /// Calculates PE Ratio
         /// </summary>
         /// <returns>double</returns>
-        public double CalculatePERatio(double price,StockRepository stockRep)
+        private double CalculatePERatio(double price,StockRepository stockRep)
         {
             double dPERatio = 0;
             try
@@ -116,14 +116,14 @@ namespace JPStockCalculation.Facade
        /// Calculates GBCE AllShareIndex
        /// </summary>
        /// <returns>double</returns>
-        public Double CalculateGBCEAllShareIndex()
+        private Double CalculateGBCEAllShareIndex()
         {
             Dictionary<String, StockRepository> stocks = null;
             stocks = this.stocksDb;
             double dGbceAllSharesIndex = 0.0;
             try
             {
-                dGbceAllSharesIndex = GBCERepository.allShareIndex(stocks);
+                dGbceAllSharesIndex = gbce.allShareIndex(stocks);
             }
             catch (Exception ex)
             {
@@ -135,7 +135,7 @@ namespace JPStockCalculation.Facade
         
 
         
-        public void RecordTrades(StockRepository stockRep, int count)
+        private void RecordTrades(StockRepository stockRep, int count)
         {
            try
             {
@@ -147,7 +147,7 @@ namespace JPStockCalculation.Facade
             }            
         }
 
-        public Double CalculateVolumeWeightedStockPrice(StockRepository stockRep)
+        private Double CalculateVolumeWeightedStockPrice(StockRepository stockRep)
         {
             double dVolumeWeightedStockPrice = 0.0;
             try
