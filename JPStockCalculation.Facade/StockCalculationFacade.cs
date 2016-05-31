@@ -16,7 +16,7 @@ namespace JPStockCalculation.Facade
     /// This Class is a Facade Class which acts as a main System for carrying out Stock Calculations.
     /// It internally interfaces the subsystems of Stocks, Trades to do various mentioned calculations.
     /// </summary>
-    public class StockCalculationFacade
+    public class StockCalculationFacade:IStockCalculationFacade
     {        
        // TradeRepository trade = null;
         GBCERepository gbce = null;
