@@ -11,9 +11,6 @@ namespace JPStockCalculation.Facade
     public interface IStockCalculationFacade
     {
         void DoSimpleStockCalculations(double dMarketPrice);
-        //double CalculateDividendYield(double price, StockRepository stockRep);
-        //double CalculatePERatio(double price, StockRepository stockRep);
-        //void RecordTrades(StockRepository stockRep, int Count);
-        //Double CalculateGBCEAllShareIndex();
+        
     }
 }
